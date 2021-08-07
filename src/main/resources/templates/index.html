@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Return of The Coder!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/5.0.1/css/bootstrap.min.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Geekseat Witch Saga: Return of The Coder!</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" style="min-height: 500px">
+
+    <div class="starter-template">
+        <h1></h1>
+
+        <div id="feedback" class="alert alert-info" role="alert"></div>
+
+        <form id="expelwitch">
+            <div id="peopleContainer">
+                <div class="form-group form-group-lg">
+                    <label class="">Person A:</label>
+                    <label class="col-sm-2 control-label">Age of Death:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="ageOfDeath1"/>
+                    </div>
+                    <label class="col-sm-2 control-label">Year of Death:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="yearOfDeath1"/>
+                    </div>
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label class="">Person B:</label>
+                    <label class="col-sm-2 control-label">Age of Death:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="ageOfDeath2"/>
+                    </div>
+                    <label class="col-sm-2 control-label">Year of Death:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="yearOfDeath2"/>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="btn-submit"
+                            class="btn btn-primary btn-lg">Submit
+                    </button>
+                    <button type="button" id="btn-add-person"
+                            class="btn btn-primary btn-lg">Add Person
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+<script type="text/javascript"
+        src="webjars/jquery/3.6.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/witch.js"></script>
+
+</body>
+</html>
