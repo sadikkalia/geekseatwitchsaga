@@ -39,17 +39,25 @@ public class WitchProtector {
         return sum.divide(new BigDecimal(people.size()), 2, RoundingMode.HALF_UP);
     }
 
+    private Integer getFibonacciTermOnYear(Integer year) {
+        int lastNumber = 1;
+        int secondLastNumber = 1;
+        int sum = 0;
+        int peopleKilledThisYear = 1;
 
-    private synchronized Integer getFibonacciTermOnYear(Integer year) {
-        if (fibonacciSum.size() < year) {
 
-            for (int i = fibonacciSum.size(); i < year; i++) {
-                fibonacciSequece.add(fibonacciSequece.get(i-1) + fibonacciSequece.get(i-2));
-                fibonacciSum.add(fibonacciSum.get(i-1) + fibonacciSequece.get(i));
-            }
+        if (year <= 1){
+            return 1;
         }
 
-        return fibonacciSum.get(year-1);
+        for (int i = 2; i <= year; i++) {
+            sum = lastNumber + secondLastNumber;
+            peopleKilledThisYear = peopleKilledThisYear + lastNumber;
+            secondLastNumber = lastNumber;
+            lastNumber = sum;
+        }
+
+        return peopleKilledThisYear;
     }
 
 }

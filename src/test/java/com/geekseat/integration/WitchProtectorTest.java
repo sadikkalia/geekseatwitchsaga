@@ -35,6 +35,17 @@ class WitchProtectorTest {
     }
 
     @Test
+    void shouldReturnCorrectAverageTest2() throws Exception {
+        List<Person> people = getPeopleList(10, 13, 13, 18);
+
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity("http://localhost:"
+                + port + "/witchsaga/expelwitch", people, String.class);
+
+        assertEquals( "8.00", responseEntity.getBody());
+        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
+    }
+
+    @Test
     void shouldReturnMinusOneWhenYearOfDeathIsSmallerThenAgeOfDeathTest() throws Exception {
         List<Person> people = getPeopleList(10, 9, 15, 17);
 
